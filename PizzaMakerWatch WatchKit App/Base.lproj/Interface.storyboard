@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PizzaMakerWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="2FX-2b-tK6">
+                            <items>
+                                <label alignment="left" text="Tamaño:" textAlignment="left" id="6eB-aJ-SxO"/>
+                            </items>
+                        </group>
+                        <picker height="100" alignment="left" id="CgH-YA-lls">
+                            <connections>
+                                <action selector="CambiarTamaño:" destination="AgC-eL-Hgc" id="wzD-EW-Mwr"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Siguiente" id="sTy-ZE-Z8S">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.82378926699999999" green="0.16614992640000001" blue="0.2169576449" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="SeleccionarMasa" destination="AgC-eL-Hgc" id="ft4-q1-Tth"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="TamañoPicker" destination="CgH-YA-lls" id="BOm-rA-qVi"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--idMasa-->
+        <scene sceneID="K0O-B6-TQC">
+            <objects>
+                <controller identifier="idMasa" id="1YU-qL-EUe" customClass="VistaMasa" customModule="PizzaMakerWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Masa:" id="VGg-PJ-uqV"/>
+                        <picker height="100" alignment="left" id="mW3-RB-A4A">
+                            <connections>
+                                <action selector="seleccionarMasa:" destination="1YU-qL-EUe" id="1sj-E7-zvr"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Siguiente" id="fjG-D6-eDr">
+                            <color key="backgroundColor" red="0.82378926699999999" green="0.16614992640000001" blue="0.2169576449" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="SeleccionarQueso" destination="1YU-qL-EUe" id="KSj-Jk-jOE"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="MasaPicker" destination="mW3-RB-A4A" id="eIx-xJ-ZJ0"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="476" y="347"/>
+        </scene>
+        <!--idQueso-->
+        <scene sceneID="5kS-yQ-MlM">
+            <objects>
+                <controller identifier="idQueso" id="m0t-kY-asn" customClass="VistaQueso" customModule="PizzaMakerWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Queso:" id="BcM-VA-F0d"/>
+                        <picker height="100" alignment="left" id="ih1-ib-8DF">
+                            <connections>
+                                <action selector="SeleccionarQueso:" destination="m0t-kY-asn" id="7qb-Iw-6l7"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Siguiente" id="8tf-Gc-k9L">
+                            <color key="backgroundColor" red="0.82378926699999999" green="0.16614992640000001" blue="0.2169576449" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="SeleccionarIngredientes" destination="m0t-kY-asn" id="H79-XT-N2B"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="QuesoPicker" destination="ih1-ib-8DF" id="uYE-fe-y4q"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="690" y="347"/>
+        </scene>
+        <!--idConfirmar-->
+        <scene sceneID="vEd-4W-QIL">
+            <objects>
+                <controller identifier="idConfirmar" id="rgO-5L-ozx" customClass="vistaConfirmar" customModule="PizzaMakerWatch_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="rbd-LO-coX">
+                            <items>
+                                <label alignment="left" text="Tamaño" id="kR9-1C-Emi"/>
+                                <label alignment="left" id="5XF-Jy-vaJ"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="hcT-5o-hC2">
+                            <items>
+                                <label alignment="left" text="Masa:" id="4Sp-hb-WYu"/>
+                                <label alignment="left" id="iIY-Zw-qcR"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="7iT-fK-u5p">
+                            <items>
+                                <label alignment="left" text="Queso:" id="D8u-Uh-3AG"/>
+                                <label alignment="left" id="y2v-D3-IlY"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="aG4-fl-lvp">
+                            <items>
+                                <label alignment="left" text="Ingredientes:" id="D5D-SE-xtd"/>
+                            </items>
+                        </group>
+                        <label alignment="left" numberOfLines="0" id="WQq-q0-fH8"/>
+                        <label alignment="left" numberOfLines="0" id="wcJ-1V-dXr">
+                            <color key="textColor" red="1" green="0.20189727969999999" blue="0.25331669410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <button width="1" alignment="left" title="Confirmar" id="qh7-T0-Ddd">
+                            <color key="backgroundColor" red="0.82378926699999999" green="0.16614992640000001" blue="0.2169576449" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="confirmar" destination="rgO-5L-ozx" id="JxU-NK-rbM"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="error" destination="wcJ-1V-dXr" id="G2c-rQ-GFt"/>
+                        <outlet property="ingredientesLabel" destination="WQq-q0-fH8" id="OGV-NY-7DL"/>
+                        <outlet property="masaLabel" destination="iIY-Zw-qcR" id="eLc-Zh-eoY"/>
+                        <outlet property="quesoLabel" destination="y2v-D3-IlY" id="Rlv-K7-oaq"/>
+                        <outlet property="tamañoLabel" destination="5XF-Jy-vaJ" id="ftj-7U-STl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1139" y="340"/>
+        </scene>
+        <!--idCorrecto-->
+        <scene sceneID="q4b-3g-pK5">
+            <objects>
+                <controller identifier="idCorrecto" id="giE-us-fRi" customClass="vistaExito" customModule="PizzaMakerWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Su pizza ha sido confirmada, en unos minutos estará lista, gracias por confiar en PizzaMaker" textAlignment="center" numberOfLines="0" id="eIh-Lu-Ew6"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1356" y="340"/>
+        </scene>
+        <!--idIngredientes-->
+        <scene sceneID="A3h-Aq-0mp">
+            <objects>
+                <controller identifier="idIngredientes" id="Cic-sj-bzm" customClass="VistaIngredientes" customModule="PizzaMakerWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Ingredientes:" id="cRM-tf-7Q7"/>
+                        <switch width="1" alignment="left" title="Jamon" id="dki-3C-mAV">
+                            <connections>
+                                <action selector="selectJamon:" destination="Cic-sj-bzm" id="mZF-7S-HqZ"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Bacon" id="azw-zo-zcg">
+                            <connections>
+                                <action selector="selectBacon:" destination="Cic-sj-bzm" id="gw2-vn-LfZ"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Salami" id="xCN-Tz-D9B">
+                            <connections>
+                                <action selector="selectSalami:" destination="Cic-sj-bzm" id="EVF-wv-2rF"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Setas" id="YcE-7s-mag">
+                            <connections>
+                                <action selector="selectSetas:" destination="Cic-sj-bzm" id="zjl-FS-CmM"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Atun" id="KJt-2s-4cH">
+                            <connections>
+                                <action selector="selectAtun:" destination="Cic-sj-bzm" id="vHM-7C-wpH"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Cebolla" id="Lrk-zX-Ytl">
+                            <connections>
+                                <action selector="selectCebolla:" destination="Cic-sj-bzm" id="33Y-ko-TaQ"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Pollo" id="lPh-fM-RWb">
+                            <connections>
+                                <action selector="selectPollo:" destination="Cic-sj-bzm" id="0y4-y4-14P"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Salmon" id="c8i-mf-yG3">
+                            <connections>
+                                <action selector="selectSalmon:" destination="Cic-sj-bzm" id="gKO-qw-USd"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Ternera" id="0An-Ll-Aii">
+                            <connections>
+                                <action selector="selectTernera:" destination="Cic-sj-bzm" id="raj-6F-gHP"/>
+                            </connections>
+                        </switch>
+                        <button width="1" alignment="left" title="Siguiente" id="x8K-Y5-SKM">
+                            <color key="backgroundColor" red="0.82378926699999999" green="0.16614992640000001" blue="0.2169576449" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="DetallesPizza" destination="Cic-sj-bzm" id="fFl-Ix-ScM"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="Bacon" destination="azw-zo-zcg" id="E14-6g-2Ia"/>
+                        <outlet property="Salami" destination="xCN-Tz-D9B" id="wRd-Tf-F8B"/>
+                        <outlet property="atun" destination="KJt-2s-4cH" id="Ied-ur-ic4"/>
+                        <outlet property="cebolla" destination="Lrk-zX-Ytl" id="S1Y-aL-rdk"/>
+                        <outlet property="jamon" destination="dki-3C-mAV" id="dlI-GI-sUn"/>
+                        <outlet property="pollo" destination="lPh-fM-RWb" id="0zx-0X-LpZ"/>
+                        <outlet property="salmon" destination="c8i-mf-yG3" id="MAH-zE-VXe"/>
+                        <outlet property="setas" destination="YcE-7s-mag" id="avv-Np-691"/>
+                        <outlet property="ternera" destination="0An-Ll-Aii" id="3Jv-W7-35M"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="911" y="340"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="PizzaMakerWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="PizzaMakerWatch_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+    </scenes>
+</document>
